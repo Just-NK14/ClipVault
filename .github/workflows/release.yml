@@ -3,7 +3,7 @@ name: Build and Release ClipVault
 on:
   push:
     tags:
-      - 'v*' # Triggers whenever you push a tag starting with 'v'
+      - 'v*' 
 
 jobs:
   release:
@@ -16,13 +16,12 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x' # Ensure this matches your project version
+        dotnet-version: '10.0' 
 
     - name: Restore Dependencies
       run: dotnet restore
 
     - name: Publish Executable
-      # This builds a single, optimized, self-contained .exe file
       run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:PublishReadyToRun=true -o ./publish
 
     - name: Zip Artifacts
