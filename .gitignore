@@ -1,0 +1,12 @@
+# Visual Studio modern solution files
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+
+# NuGet packages
+*.nuget.props
+*.nuget.targets
+
+# User data
+vault_data.json
