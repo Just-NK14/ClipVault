@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 using NHotkey;
 using NHotkey.Wpf;
 
-// Explicitly using aliases to resolve namespace conflicts
 using TextBox = System.Windows.Controls.TextBox;
 using Forms = System.Windows.Forms;
 
@@ -25,7 +24,6 @@ namespace ClipVault
 
         private Forms.NotifyIcon _notifyIcon = null!;
 
-        // Professional Path: C:\Users\[User]\AppData\Local\NoeticKit\ClipVault\vault_data.json
         private readonly string _saveFilePath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
             "NoeticKit", "ClipVault", "vault_data.json");
@@ -60,7 +58,6 @@ namespace ClipVault
         {
             try
             {
-                // Ensure the NoeticKit/ClipVault folders exist before saving
                 string? directory = Path.GetDirectoryName(_saveFilePath);
                 if (directory != null && !Directory.Exists(directory))
                 {

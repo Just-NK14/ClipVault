@@ -4,6 +4,12 @@ ClipVault is a minimalist background utility for Windows that provides ten indep
 
 ---
 
+## Download
+
+Download the [latest release](https://github.com/Just-NK14/ClipVault/releases).
+
+---
+
 ## Core Functionality
 
 The application listens for global hotkeys to capture or inject text into any active window. 
@@ -21,7 +27,7 @@ The application listens for global hotkeys to capture or inject text into any ac
 
 - **Persistence**: Saved snippets are stored locally in the user AppData directory, ensuring data is retained after system restarts.
 - **Global Availability**: High-performance hotkey registration allows for instant use across all Windows applications.
-- **Background Operation**: The application runs in the system tray to minimize workspace clutter.
+- **Background Operation**: The application runs in the system tray to minimize workspace clutter. Double-click the tray icon to bring the vault to the foreground.
 - **Architecture**: Built using .NET and WPF with low-level P/Invoke keyboard event handling for zero-latency response.
 
 ---
