@@ -39,9 +39,13 @@ namespace ClipVault
         private void SetupTrayIcon()
         {
             _notifyIcon = new Forms.NotifyIcon();
-            _notifyIcon.Icon = System.Drawing.SystemIcons.Application;
+            string iconPath = System.IO.Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "NoeticKit.ico"
+            );
+            _notifyIcon.Icon = new System.Drawing.Icon(iconPath);
             _notifyIcon.Visible = true;
-            _notifyIcon.Text = "ClipVault - Noetic Kit";
+            _notifyIcon.Text = "ClipVault";
             _notifyIcon.DoubleClick += (s, e) => ShowApp();
 
             _notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();

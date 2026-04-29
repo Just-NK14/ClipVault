@@ -1,73 +1,117 @@
 ﻿<Window x:Class="ClipVault.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="NoeticKit - ClipVault" Height="520" Width="700" 
-        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" 
+        Title="NoeticKit - ClipVault" Height="680" Width="820" 
+        MinWidth="563" MinHeight="660"
+        WindowStartupLocation="CenterScreen" Background="#FBFBFB"
         Closing="Window_Closing">
 
-    <Grid Margin="15">
+    <Window.Resources>
+        <Style x:Key="ModernSlot" TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style x:Key="SlotLabel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#888888"/>
+            <Setter Property="Margin" Value="2,0,0,4"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="25">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="0,0,0,15">
-            <TextBlock Text="ClipVault" FontSize="24" FontWeight="Bold" Margin="0,0,0,2" HorizontalAlignment="Center"/>
-            <TextBlock Text="10-Slot Clipboard Manager" FontSize="13" Foreground="Gray" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="0" Margin="0,0,0,25">
+            <TextBlock Text="ClipVault" FontSize="28" FontWeight="Light" Foreground="#1A1A1A" HorizontalAlignment="Left"/>
+            <TextBlock Text="Effortless Multi-Slot Clipboard" FontSize="12" Foreground="#A0A0A0" HorizontalAlignment="Left" Margin="2,2,0,0"/>
         </StackPanel>
 
         <UniformGrid Grid.Row="1" Rows="5" Columns="2">
-
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 1 (Copy: Alt+1 | Paste: Ctrl+Alt+1)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot1TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 1 — Alt+1" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot1TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 2 (Copy: Alt+2 | Paste: Ctrl+Alt+2)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot2TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 2 — Alt+2" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot2TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 3 (Copy: Alt+3 | Paste: Ctrl+Alt+3)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot3TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 3 — Alt+3" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot3TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 4 (Copy: Alt+4 | Paste: Ctrl+Alt+4)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot4TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 4 — Alt+4" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot4TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 5 (Copy: Alt+5 | Paste: Ctrl+Alt+5)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot5TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 5 — Alt+5" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot5TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 6 (Copy: Alt+6 | Paste: Ctrl+Alt+6)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot6TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 6 — Alt+6" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot6TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 7 (Copy: Alt+7 | Paste: Ctrl+Alt+7)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot7TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 7 — Alt+7" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot7TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 8 (Copy: Alt+8 | Paste: Ctrl+Alt+8)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot8TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 8 — Alt+8" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot8TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 9 (Copy: Alt+9 | Paste: Ctrl+Alt+9)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot9TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 9 — Alt+9" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot9TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
 
-            <StackPanel Margin="10,5">
-                <TextBlock Text="Slot 0 (Copy: Alt+0 | Paste: Ctrl+Alt+0)" FontWeight="SemiBold" FontSize="11" Margin="0,0,0,2"/>
-                <TextBox x:Name="Slot0TextBox" Height="40" TextWrapping="Wrap" AcceptsReturn="True" Background="#F9F9F9"/>
+            <StackPanel Margin="10,8">
+                <TextBlock Text="SLOT 0 — Alt+0" Style="{StaticResource SlotLabel}"/>
+                <TextBox x:Name="Slot0TextBox" Height="55" Style="{StaticResource ModernSlot}" TextWrapping="Wrap" AcceptsReturn="True"/>
             </StackPanel>
-
         </UniformGrid>
+
+        <Border Grid.Row="2" Background="#F1F3F4" CornerRadius="8" Padding="20,12" Margin="10,20,10,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="#E0E0E0" CornerRadius="4" Padding="6,2">
+                        <TextBlock Text="Alt + #" FontSize="11" FontWeight="Bold" Foreground="#444444"/>
+                    </Border>
+                    <TextBlock Text="to Copy" VerticalAlignment="Center" Margin="8,0,20,0" FontSize="11" Foreground="#666666"/>
+                </StackPanel>
+
+                <Rectangle Width="1" Height="14" Fill="#D0D0D0" VerticalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <Border Background="#1A73E8" CornerRadius="4" Padding="6,2">
+                        <TextBlock Text="Ctrl + Alt + #" FontSize="11" FontWeight="Bold" Foreground="White"/>
+                    </Border>
+                    <TextBlock Text="to Paste" VerticalAlignment="Center" Margin="8,0,0,0" FontSize="11" Foreground="#1A73E8" FontWeight="SemiBold"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
